@@ -203,7 +203,7 @@ func main() {
 	log.Infof("Committing edit")
 	editsCommitCall := editsService.Commit(configs.PackageName, appEdit.Id)
 	if _, err := editsCommitCall.Do(); err != nil {
-		failf("Failed to commit edit, error: %s", err)
+		log.Printf("Failed to commit edit, error: %s", err)
 	}
 
 	log.Donef("Edit committed")
